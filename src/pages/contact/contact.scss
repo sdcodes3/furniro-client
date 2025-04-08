@@ -1,0 +1,102 @@
+.contactMain{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .contact-banner {
+        text-align: center;
+        background-image: url('../../assets/shop.jpeg');
+        background-size: cover;
+        background-position: center;
+        padding: 2rem 1rem;
+        position: relative;
+        height: 316px;
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: black;
+            margin-top: 5.5rem;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: black;
+            margin-top: 1rem;
+        }
+    }
+
+    .getintouch{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        font-weight: bold;
+        text-align: center;
+
+        p{
+            color: #9F9F9F;
+            font-weight: normal;
+            width: 30vmax;
+        }
+    }
+
+    .contactDetails{
+
+        width: 99.35%;
+
+        .basic-info{
+            padding-left: 20%;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+
+
+            .address,.phone,.time{
+                display: flex;
+                gap: 40px;
+                text-align: left;
+
+                .info{
+                    width:50%;
+                }
+
+                
+            }
+        }
+
+        .formDetails {
+            overflow: hidden;
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btnfilled {
+                margin-top: 15px;
+                margin-bottom: 50px;
+                height: 4rem;
+                width: 15rem;
+                border-radius: 6px;
+                background: #B88E2F;
+                border: 2px solid #B88E2F;
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+            
+                &:hover {
+                    background: #fff;
+                    color: #B88E2F;
+                }
+            }
+        }
+
+    }
+
+    
+
+
+} 

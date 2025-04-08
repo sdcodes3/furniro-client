@@ -1,0 +1,69 @@
+.card {
+    width: 290px;
+    height: 450px;
+    // background-color: pink;
+
+    .hoverContainer {
+        border-radius: 7px;
+        width: 100%;
+        height: 100%;
+        background-color: #3A3A3A;
+        // opacity: 50%;
+        display: none;
+
+        .hoverItems {
+
+            width: 90%;
+            height: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+
+            .atc_btn {
+                height: 45px;
+                width: 150px;
+                background-color: #fff;
+                color: #B88E2F;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+
+                &:hover {
+                    color: white;
+                    background-color: #B88E2F;
+                }
+            }
+
+            .likeShareCompare {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 14px;
+
+                .share, .compare, .like {
+                    span{
+                        margin-left: 4px;
+                        color: #fff;
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+
+        
+    }
+
+    &:hover {
+        .hoverContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

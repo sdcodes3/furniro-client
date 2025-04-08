@@ -1,0 +1,406 @@
+.home-main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('../../assets/home-landing.png');
+
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    // START OF NEW ARRIVAL BOX AND BG
+
+    .new-arrival {
+        margin-right: 10%;
+        padding: 50px;
+        background-color: #FFF3E3;
+        width: 50%;
+        height: 60%;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        span {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 5em;
+            font-weight: bold;
+            color: #B88E2F;
+
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .btn {
+            margin-top: 15px;
+            height:60px;
+            width: 200px;
+            background: #B88E2F;
+            border: 2px solid #B88E2F;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+
+            &:hover {
+                background: #FFF3E3;
+                color: #B88E2F;
+            }
+        }
+    }
+
+    @media screen and (max-width:1338px) {
+        .new-arrival {
+            margin-right: 10%;
+            padding: 50px;
+            width: 60%;
+            height: 70%;
+        }    
+    }
+    
+    @media screen and (max-width:925px) {
+        .new-arrival {
+            margin-right: 10%;
+            padding: 50px;
+            width: 60%  ;
+            height: 80%;
+
+            h1 {
+                font-size: 10vw;
+            }
+
+        }    
+    }
+    @media screen and (max-width:533px) {
+        .new-arrival {
+            margin-right: 0;
+            padding-left: 20px;
+            width: 100%  ;
+            height: 100%;
+            gap: 30px;
+
+            h1 {
+                font-size: 15vw;
+            }   
+
+            p {
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+        }    
+    }
+
+    // END OF NEW ARRIVAL BOX AND BG
+
+}
+
+
+.txt {
+    color: var(--Font-Color, #333);
+    text-align: center;
+    margin-top: 3rem;
+
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 22px;
+        font-weight: 400;
+    }
+}
+
+
+.Showcase {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        width: full;
+    }
+}
+
+
+.Products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .showmorebtn {
+        height: 4rem;
+        width: 15rem;
+        background: none;
+        border: 2px solid #B88E2F;
+        color: #B88E2F;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            background: #B88E2F;
+            color: white;
+        }
+    }
+}
+
+
+.carousal-container {
+    background-color: #FCF8F3;
+    height: 100%;
+    margin-top: 6rem;
+    padding-left: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 3rem;
+        font-weight: bolder;
+    }
+
+    span {
+        margin-top: 15px;
+        font-size: 40px;
+        font-weight: 200;
+        display: block;
+    }
+
+
+}
+
+
+@media screen and (max-width: 425px) {
+    .carousal-container {
+    
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bolder;
+            margin-bottom: 40px;
+        }
+    
+        span {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 40px;
+            font-weight: 200;
+        }
+    
+    
+    }
+}
+
+
+
+
+.btnfilled {
+    margin-top: 15px;
+    height: 4rem;
+    width: 15rem;
+    background: #B88E2F;
+    border: 2px solid #B88E2F;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        background: #FCF8F3;
+        color: #B88E2F;
+    }
+}
+
+.tag {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
+
+
+
+.imageGallery {
+
+    height: 100vh;
+    background-image: url('../../assets/Img_Gallery.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 10;
+}
+
+.slider-wrapper {
+    width: 100%;
+    max-width: 1536px;
+    //   margin-inline: auto;
+    position: relative;
+    height: 400px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0));
+}
+
+
+
+
+
+
+// START CAROUSAL OF IMAGES IN INSPIRATION
+
+
+@keyframes scrollLeft {
+    to {
+        left: -350px;
+    }
+}
+
+@keyframes scrollRight {
+    to {
+        right: -350px;
+    }
+}
+
+.item {
+    width: 350px;
+    height: 400px;
+    background-color: red;
+    border-radius: 6px;
+    position: absolute;
+}
+
+.left .item {
+    left: max(calc(350px * 8), 100%);
+    animation: scrollLeft 10s linear infinite;
+}
+
+.right .item {
+    right: max(calc(350px * 8), 100%);
+    animation: scrollRight 10s linear infinite;
+}
+
+.left .item1,
+.right .item1 {
+    animation-delay: calc((-10s / 8) * 7);
+    background-image: url('../../assets/carousal1.png');
+}
+
+.left .item2,
+.right .item2 {
+    animation-delay: calc((-10s / 8) * 6);
+    background-image: url('../../assets/carousal2.png');
+}
+
+.left .item3,
+.right .item3 {
+    animation-delay: calc((-10s / 8) * 5);
+    background-image: url('../../assets/carousal3.png');
+}
+
+.left .item4,
+.right .item4 {
+    animation-delay: calc((-10s / 8) * 4);
+    background-image: url('../../assets/Browse_Bedroom.png');
+}
+
+.left .item5,
+.right .item5 {
+    animation-delay: calc((-10s / 8) * 3);
+    background-image: url('../../assets/Browse_Dining.png');
+}
+
+.left .item6,
+.right .item6 {
+    animation-delay: calc((-10s / 8) * 2);
+    background-image: url('../../assets/Browse_Living.png');
+}
+
+.left .item7,
+.right .item7 {
+    animation-delay: calc((-10s / 8) * 1);
+    background-image: url('../../assets/carousal3.png');
+}
+
+.left .item8,
+.right .item8 {
+    animation-delay: calc((-10s / 8) * 0);
+    background-image: url('../../assets/carousal2.png');
+}
+
+
+// END CAROUSAL OF IMAGES IN INSPIRATION
+
+
+
+@media (min-width: 2000px) {
+    .Showcase {
+        .card {
+            width: auto;
+            flex: 1;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .Products {
+        .card {
+            width: auto;
+            flex: 1;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}

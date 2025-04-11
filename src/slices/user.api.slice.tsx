@@ -33,7 +33,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
       query: (id) => ({
         url: `${USERS_URL}/${id}`,
         method: 'PUT',
-        body: data,
+        body: id,
       }),
     }),
   }),

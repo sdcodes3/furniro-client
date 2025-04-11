@@ -1,18 +1,10 @@
-import { Outlet, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useSelector, UseSelector } from 'react-redux';
+import { Outlet, Navigate } from 'react-router-dom';
+import { useAppSelector } from '../hooks';
 
 const PrivateRoutes = () => {
-  const navigate = useNavigate();
-  const { userInfo } = useSelector((state) => state.auth);
+  const { userInfo } = useAppSelector((state) => state.auth);
 
-  useEffect(() => {
-    if (!userInfo) {
-      navigate('/signin', { replace: true });
-    }
-  }, [userInfo, navigate]);
-
-  return userInfo ? <Outlet /> : navigate('/signin');
+  return userInfo ? <Outlet /> : <Navigate to="/signin" replace />;
 };
 
 export default PrivateRoutes;

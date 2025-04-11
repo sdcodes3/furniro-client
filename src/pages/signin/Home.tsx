@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAuth } from '../../utils/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ function Home() {
     }
   }, [user]);
 
-  const onClickSignOut = async (event) => {
+  const onClickSignOut = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const result = await signOutUser();
@@ -25,7 +25,7 @@ function Home() {
   return (
     <div>
       Home page
-      <button onClick={onClickSignOut}>sign out</button>
+      <button onClick={() => onClickSignOut}>sign out</button>
     </div>
   );
 }

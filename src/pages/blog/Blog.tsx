@@ -6,7 +6,6 @@ import Promise from '../../components/our_promise/Promise';
 
 // boostrap imports
 import { Row, Col } from 'react-bootstrap';
-import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
 
 // image impots

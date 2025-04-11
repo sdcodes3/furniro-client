@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 // page imports
@@ -11,7 +11,6 @@ import { signout } from '../../slices/auth.slice';
 
 // bootstrap imports
 import { Card, Row, Col } from 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
 
 // image imports
 import Dining from '../../assets/Browse_Dining.png';
@@ -24,13 +23,13 @@ import product3 from '../../assets/Products_images/Respira.png';
 import product4 from '../../assets/Products_images/Potty.png';
 import product5 from '../../assets/Products_images/Pingky.png';
 import product6 from '../../assets/Products_images/Muggo.png';
-
+import { useAppSelector } from '../../hooks';
 function Home() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { userInfo } = useSelector((state) => state.auth);
+  const { userInfo } = useAppSelector((state) => state.auth);
 
-  const [signoutApiCall, { isLoading, error }] = useSignoutMutation();
+  const [signoutApiCall] = useSignoutMutation();
 
   useEffect(() => {
     if (!userInfo) {
@@ -38,14 +37,14 @@ function Home() {
     }
   }, [userInfo]);
 
-  const onClickSignOut = async (event) => {
+  const onClickSignOut = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
-      await signoutApiCall().unwrap();
+      await signoutApiCall({}).unwrap();
       dispatch(signout());
       navigate('/signin');
-    } catch (err) {
+    } catch (err: any) {
       console.log('signout failed: ', err);
       alert(err?.data?.message || 'signout failed');
     }
@@ -243,7 +242,7 @@ function Home() {
       <div className="imageGallery"></div>
 
       <div className=" my-5 button-container">
-        <button onClick={onClickSignOut} className="showmorebtn">
+        <button onClick={(e) => onClickSignOut(e as any)} className="showmorebtn">
           SIGN OUT!
         </button>
       </div>

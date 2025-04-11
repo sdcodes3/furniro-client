@@ -1,21 +1,22 @@
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // pages import
 import './signup.scss';
 import { useSignupMutation } from '../../slices/user.api.slice';
 import { setCredentials } from '../../slices/auth.slice';
+import { useAppSelector } from '../../hooks';
 
 function Signup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { error, setError } = useState(null);
+  const [_, setError] = useState(null);
   const signupForm = useRef(null);
 
-  const [signup, { isLoading }] = useSignupMutation();
-  const { userInfo } = useSelector((state) => state.auth);
+  const [signup] = useSignupMutation();
+  const { userInfo } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (userInfo) {
@@ -23,12 +24,21 @@ function Signup() {
     }
   }, [userInfo]);
 
-  const handleSubmitSignUp = async (event) => {
+  const handleSubmitSignUp = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const name = signupForm.current.name.value;
-    const email = signupForm.current.email.value;
-    const password = signupForm.current.password.value;
+    const name =
+      signupForm.current &&
+      ((signupForm.current as HTMLFormElement).elements.namedItem('name') as HTMLInputElement)
+        .value;
+    const email =
+      signupForm.current &&
+      ((signupForm.current as HTMLFormElement).elements.namedItem('email') as HTMLInputElement)
+        .value;
+    const password =
+      signupForm.current &&
+      ((signupForm.current as HTMLFormElement).elements.namedItem('password') as HTMLInputElement)
+        .value;
     // console.log('name: ', name, '\nemail: ', email, '\npassword: ', password);
 
     const userInfo = { name, email, password };
@@ -37,10 +47,10 @@ function Signup() {
       const result = await signup(userInfo).unwrap();
       dispatch(setCredentials(result));
       navigate('/');
-    } catch (err) {
+    } catch (err: any) {
       console.log(err);
-      console.log(result.message);
-      setError(result.error.message);
+      console.log(err.result.message);
+      setError(err.result.message);
     }
   };
 

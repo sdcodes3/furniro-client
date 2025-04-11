@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // pages import
 import './signin.scss';
 import { useSigninMutation } from '../../slices/user.api.slice';
 import { setCredentials } from '../../slices/auth.slice';
-
+import { useAppSelector } from '../../hooks';
 const Signin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,8 +14,8 @@ const Signin = () => {
   const [error, setError] = useState(null);
   const signinForm = useRef(null);
 
-  const [signin, { isLoading }] = useSigninMutation();
-  const { userInfo } = useSelector((state) => state.auth);
+  const [signin] = useSigninMutation();
+  const { userInfo } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (userInfo) {
@@ -23,18 +23,21 @@ const Signin = () => {
     }
   }, [userInfo]);
 
-  const handleSubmitSignin = async (event) => {
+  const handleSubmitSignin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const email = signinForm.current.email.value;
-    const password = signinForm.current.password.value;
+    const email =
+      signinForm.current &&
+      ((signinForm.current as HTMLFormElement).elements.namedItem('email') as HTMLInputElement);
+    const password =
+      signinForm.current &&
+      ((signinForm.current as HTMLFormElement).elements.namedItem('password') as HTMLInputElement);
     const userInfo = { email, password };
 
     try {
       const result = await signin(userInfo).unwrap();
       dispatch(setCredentials(result));
       navigate('/');
-    } catch (err) {
+    } catch (err: any) {
       // console.log('error message: ', err);
       setError(err?.data?.message || err?.error);
     }

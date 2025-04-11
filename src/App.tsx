@@ -4,7 +4,6 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // auth provider import
-import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
 
 // redux toolkit imports
@@ -12,12 +11,8 @@ import store from './store';
 import { Provider } from 'react-redux';
 
 // pages imports
-// import Navbar from './components/navbar/navbar';
 import Signin from './pages/signin/Signin';
 import Signup from './pages/signup/Signup';
-import Footer from './components/footer/Footer';
-import ProductCard from './components/Product_card/ProductCard';
-import BlogPost from './components/blog_post/BlogPost';
 import Shop from './pages/shop/Shop';
 import Home from './pages/home/Home';
 import SingleItem from './pages/singleItem/SingleItem';
@@ -26,7 +21,6 @@ import Cart from './pages/cart/Cart';
 import Comparison from './pages/comparison/Comparison';
 import Checkout from './pages/checkout/Checkout';
 import Contact from './pages/contact/Contact';
-import ProductHover from './components/addToCartHover/ProductHover';
 import Blog from './pages/blog/Blog';
 
 const router = createBrowserRouter([
@@ -37,8 +31,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-        // element: <ProductCard />,      remove this with page
-        // element: <ProductHover />,     testing
       },
       {
         path: '/shop',
@@ -78,17 +70,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     path: '/signin',
     element: <Signin />,
   },
-
   {
     path: '/signup',
     element: <Signup />,
   },
-
   {
     path: '*',
     element: <div>Page not found</div>,

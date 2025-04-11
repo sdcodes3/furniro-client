@@ -3,4 +3,25 @@
     gap: 3rem; 
   }
   
- 
+  .furniro-brand {
+    font-family:  sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 0px;
+  }
+  
+  .nav-link-custom {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #999;
+    }
+  }
+  

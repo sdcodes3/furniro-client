@@ -11,53 +11,119 @@
     background-position: center;
 
     // START OF NEW ARRIVAL BOX AND BG
-
     .new-arrival {
-        margin-right: 10%;
+        margin-right: 6%;
         padding: 50px;
         background-color: #FFF3E3;
-        width: 50%;
-        height: 60%;
-
+        width: 646px;
+        height: 443px;
+      
         display: flex;
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-
+        gap: 4px; // Default gap for desktop (unchanged)
+      
         span {
-            font-size: 22px;
-            font-weight: 600;
+          font-size: 16px;
+          font-weight: 600;
         }
-
+      
         h1 {
-            font-size: 5em;
-            font-weight: bold;
-            color: #B88E2F;
-
+          font-size: 52px;
+          font-weight: bold;
+          color: #B88E2F;
         }
-
+      
         p {
-            font-size: 22px;
-            font-weight: 500;
+          font-size: 18px;
+          font-weight: 500;
         }
-
+      
         .btn {
-            margin-top: 15px;
-            height:60px;
-            width: 200px;
-            background: #B88E2F;
-            border: 2px solid #B88E2F;
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-            cursor: pointer;
-
-            &:hover {
-                background: #FFF3E3;
-                color: #B88E2F;
-            }
+          height: 60px;
+          width: 200px;
+          background: #B88E2F;
+          border: 2px solid #B88E2F;
+          color: white;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          margin-top: 20px;
+      
+          &:hover {
+            background: #FFF3E3;
+            color: #B88E2F;
+          }
         }
-    }
+      
+        // Responsive styles
+        @media (max-width: 992px) {
+          width: 100%;
+          height: auto;
+          padding: 40px;
+          gap: 16px;
+      
+          h1 {
+            font-size: 40px;
+          }
+      
+          p {
+            font-size: 16px;
+          }
+      
+          .btn {
+            width: 180px;
+            height: 50px;
+            font-size: 15px;
+          }
+        }
+      
+        @media (max-width: 768px) {
+          padding: 30px;
+          gap: 14px;
+      
+          h1 {
+            font-size: 32px;
+          }
+      
+          p {
+            font-size: 15px;
+          }
+      
+          .btn {
+            width: 160px;
+            height: 45px;
+            font-size: 14px;
+          }
+        }
+      
+        @media (max-width: 576px) {
+          padding: 20px;
+          gap: 10px;
+      
+          span {
+            font-size: 14px;
+          }
+      
+          h1 {
+            font-size: 26px;
+          }
+      
+          p {
+            font-size: 14px;
+          }
+      
+          .btn {
+            width: 140px;
+            height: 40px;
+            font-size: 13px;
+          }
+        }
+      }
+      
+      
+      
 
     @media screen and (max-width:1338px) {
         .new-arrival {
@@ -236,29 +302,46 @@
     margin-top: 4rem;
     margin-bottom: 1rem;
     text-align: center;
+    
 
     h3 {
         font-size: 20px;
+        color: #616161;
     }
 
     h1 {
         font-size: 34px;
-        font-style: italic;
-        font-weight: bold;
+        
+        font-weight: 700;
     }
 }
 
 
 
 .imageGallery {
-
-    height: 100vh;
+    width: 100%;
+    aspect-ratio: 16 / 5; // smaller than before (was 16 / 9)
     background-image: url('../../assets/Img_Gallery.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
-}
+    background-color: #f2f2f2;
+  }
+  
+  @media (max-width: 768px) {
+    .imageGallery {
+      aspect-ratio: 16 / 6; // slightly taller on tablets
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .imageGallery {
+      aspect-ratio: 4 / 3; // more compact on mobile
+      background-position: top center;
+    }
+  }
+  
+  
 
 
 
@@ -275,107 +358,81 @@
 .slider-wrapper {
     width: 100%;
     max-width: 1536px;
-    //   margin-inline: auto;
     position: relative;
     height: 400px;
     margin-top: 5rem;
-    overflow: hidden;
+    overflow: hidden; // ✅ prevent scrollbars
     mask-image: linear-gradient(to right,
-            rgba(0, 0, 0, 0),
-            rgba(0, 0, 0, 1) 20%,
-            rgba(0, 0, 0, 1) 80%,
-            rgba(0, 0, 0, 0));
-}
-
-
-
-
-
-
-// START CAROUSAL OF IMAGES IN INSPIRATION
-
-
-@keyframes scrollLeft {
-    to {
-        left: -350px;
-    }
-}
-
-@keyframes scrollRight {
-    to {
-        right: -350px;
-    }
-}
-
-.item {
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  
+  .slider-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll 10s linear infinite;
+    gap: 2rem;
+    will-change: transform; // ✅ better performance
+  }
+  
+  .item {
+    flex: 0 0 auto;
     width: 350px;
     height: 400px;
-    background-color: red;
     border-radius: 6px;
-    position: absolute;
-}
-
-.left .item {
-    left: max(calc(350px * 8), 100%);
-    animation: scrollLeft 10s linear infinite;
-}
-
-.right .item {
-    right: max(calc(350px * 8), 100%);
-    animation: scrollRight 10s linear infinite;
-}
-
-.left .item1,
-.right .item1 {
-    animation-delay: calc((-10s / 8) * 7);
-    background-image: url('../../assets/carousal1.png');
-}
-
-.left .item2,
-.right .item2 {
-    animation-delay: calc((-10s / 8) * 6);
-    background-image: url('../../assets/carousal2.png');
-}
-
-.left .item3,
-.right .item3 {
-    animation-delay: calc((-10s / 8) * 5);
-    background-image: url('../../assets/carousal3.png');
-}
-
-.left .item4,
-.right .item4 {
-    animation-delay: calc((-10s / 8) * 4);
-    background-image: url('../../assets/Browse_Bedroom.png');
-}
-
-.left .item5,
-.right .item5 {
-    animation-delay: calc((-10s / 8) * 3);
-    background-image: url('../../assets/Browse_Dining.png');
-}
-
-.left .item6,
-.right .item6 {
-    animation-delay: calc((-10s / 8) * 2);
-    background-image: url('../../assets/Browse_Living.png');
-}
-
-.left .item7,
-.right .item7 {
-    animation-delay: calc((-10s / 8) * 1);
-    background-image: url('../../assets/carousal3.png');
-}
-
-.left .item8,
-.right .item8 {
-    animation-delay: calc((-10s / 8) * 0);
-    background-image: url('../../assets/carousal2.png');
-}
-
-
-// END CAROUSAL OF IMAGES IN INSPIRATION
-
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Backgrounds */
+  .item1 { background-image: url('../../assets/carousal1.png'); }
+  .item2 { background-image: url('../../assets/carousal2.png'); }
+  .item3 { background-image: url('../../assets/carousal3.png'); }
+  .item4 { background-image: url('../../assets/Browse_Bedroom.png'); }
+  .item5 { background-image: url('../../assets/Browse_Dining.png'); }
+  .item6 { background-image: url('../../assets/Browse_Living.png'); }
+  .item7 { background-image: url('../../assets/carousal3.png'); }
+  .item8 { background-image: url('../../assets/carousal2.png'); }
+  
+  /* Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .item {
+      width: 300px;
+      height: 350px;
+    }
+  }
+  @media (max-width: 768px) {
+    .item {
+      width: 250px;
+      height: 300px;
+    }
+  }
+  @media (max-width: 480px) {
+    .slider-wrapper {
+      height: 280px;
+    }
+    .item {
+      width: 200px;
+      height: 280px;
+    }
+    .slider-track {
+      gap: 1rem;
+    }
+  }
+  
 
 
 @media (min-width: 2000px) {

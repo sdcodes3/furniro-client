@@ -2,28 +2,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
     .contact-banner {
+        position: relative;
         text-align: center;
+        padding: 2rem 1rem;
+        height: 316px;
         background-image: url('../../assets/shop.jpeg');
         background-size: cover;
         background-position: center;
-        padding: 2rem 1rem;
-        position: relative;
-        height: 316px;
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: black;
-            margin-top: 5.5rem;
+        overflow: hidden;
+      
+        // ⬛ Overlay with backdrop blur
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(255, 255, 255, 0.3); // semi-transparent for blur effect to show
+          backdrop-filter: blur(6px); // ✅ Blurs background
+          z-index: 0;
         }
-
+      
+        // Keep text above overlay
+        h1, h2 {
+          position: relative;
+          z-index: 1;
+          color: black;
+          margin: 0;
+        }
+      
+        h1 {
+          font-size: 2.5rem;
+          margin-top: 0.8rem;
+        }
+      
         h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: black;
-            margin-top: 1rem;
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+        .banner-logo {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
         }
     }
 
@@ -35,16 +56,21 @@
         height: 300px;
         font-weight: bold;
         text-align: center;
+        margin-bottom: 10px;
 
         p{
             color: #9F9F9F;
-            font-weight: normal;
-            width: 30vmax;
+            font-weight: 400;
+            width: 644px;
+            font-size: 16px;
+        }
+        h2{
+            font-weight: 600;
+            font-size: 35px;
         }
     }
 
     .contactDetails{
-
         width: 99.35%;
 
         .basic-info{
@@ -53,17 +79,20 @@
             align-items: start;
             flex-direction: column;
 
-
             .address,.phone,.time{
                 display: flex;
                 gap: 40px;
                 text-align: left;
-
+                margin-bottom: 30px;
+                h3{
+                    font-weight: 500;
+                }
+                p{
+                    font-weight: 400;
+                }
                 .info{
                     width:50%;
                 }
-
-                
             }
         }
 
@@ -78,25 +107,73 @@
             .btnfilled {
                 margin-top: 15px;
                 margin-bottom: 50px;
-                height: 4rem;
-                width: 15rem;
+                height: 55px;
+                width: 237px;
                 border-radius: 6px;
                 background: #B88E2F;
                 border: 2px solid #B88E2F;
                 color: white;
                 font-weight: 500;
                 cursor: pointer;
-            
                 &:hover {
                     background: #fff;
                     color: #B88E2F;
                 }
             }
         }
-
     }
 
-    
+    @media (max-width: 768px) {
+        .contact-banner {
+            height: auto;
+            padding: 2rem 1rem;
 
+            h1 {
+                font-size: 2rem;
+            }
 
-} 
+            h2 {
+                font-size: 0.9rem;
+            }
+
+            .banner-logo {
+                margin-top: 2rem;
+            }
+        }
+
+        .getintouch {
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                width: 100%;
+                font-size: 14px;
+                padding: 0 1rem;
+            }
+        }
+
+        .contactDetails {
+            .basic-info {
+                padding-left: 8%;
+
+                .address, .phone, .time {
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .info {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .formDetails {
+                padding: 1rem;
+
+                .btnfilled {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

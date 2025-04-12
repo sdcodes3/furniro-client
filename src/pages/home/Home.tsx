@@ -70,8 +70,10 @@ function Home() {
       </div>
 
       <div className="Browse txt">
-        <h1>Browse The Range</h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        <h1 style={{ fontSize: '35px' }}>Browse The Range</h1>
+        <h3 style={{ color: '#666666' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </h3>
       </div>
 
       <div className="Showcase">
@@ -106,7 +108,7 @@ function Home() {
       </div>
 
       <div className="Product txt">
-        <h1>Our Products</h1>
+        <h1 style={{ fontSize: '35px' }}>Our Products</h1>
       </div>
 
       <div className="Products">
@@ -114,7 +116,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product1} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Syltherine</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -125,7 +127,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product2} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Leviosa</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -136,7 +138,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product3} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Lolito</Card.Title>
                 <Card.Text>Luxury big sofa</Card.Text>
                 <Card.Title>Rp 7.000.000</Card.Title>
@@ -147,7 +149,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product4} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Respira</Card.Title>
                 <Card.Text>Outbar Table and stoll</Card.Text>
                 <Card.Title>Rp 500.000</Card.Title>
@@ -160,7 +162,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product5} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Syltherine</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -171,7 +173,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product6} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Leviosa</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -182,7 +184,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product1} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Lolito</Card.Title>
                 <Card.Text>Luxury big sofa</Card.Text>
                 <Card.Title>Rp 7.000.000</Card.Title>
@@ -193,7 +195,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product2} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Respira</Card.Title>
                 <Card.Text>Outbar Table and stoll</Card.Text>
                 <Card.Title>Rp 500.000</Card.Title>
@@ -220,22 +222,22 @@ function Home() {
             Our designer already made a lot of beautiful prototype of rooms that inspire you
           </p>
           <button
-            className="btnfilled px-4 py-2"
-            style={{
-              fontSize: '16px',
-              backgroundColor: '#B88E2F',
-              color: '#fff',
-              border: 'none',
-              width: '176px',
-              height: '48px',
-            }}
+            className="btnfilled px-4 py-2 "
+            // style={{
+            //   fontSize: '16px',
+            //   backgroundColor: '#B88E2F',
+            //   color: '#fff',
+            //   border: 'none',
+            //   width: '176px',
+            //   height: '48px',
+            // }}
           >
             Explore More
           </button>
         </div>
 
         {/* Right: Carousel Section */}
-        <Col md={7} className="my-3 d-flex justify-content-center">
+        {/* <Col md={7} className="my-3 d-flex justify-content-center">
           <div className="slider-wrapper">
             <div className="slider-track">
               <div className="item item1"></div>
@@ -248,7 +250,7 @@ function Home() {
               <div className="item item8"></div>
             </div>
           </div>
-        </Col>
+        </Col> */}
       </div>
 
       <div className="tag">

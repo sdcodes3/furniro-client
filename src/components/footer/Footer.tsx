@@ -23,22 +23,22 @@ function Footer() {
             </h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#!" className="text-dark text-decoration-none">
+                <a href="/" className="text-dark text-decoration-none">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-dark text-decoration-none">
+                <a href="/shop" className="text-dark text-decoration-none">
                   Shop
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-dark text-decoration-none">
+                <a href="/" className="text-dark text-decoration-none">
                   About
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-dark text-decoration-none">
+                <a href="/contact" className="text-dark text-decoration-none">
                   Contact
                 </a>
               </li>

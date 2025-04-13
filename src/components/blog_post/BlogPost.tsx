@@ -11,15 +11,25 @@ const BlogPost = () => {
         <div className="card-body">
           <div className="d-flex gap-5 mb-3">
             <span>
-              <FontAwesomeIcon icon={faUser} /> Admin
+              <span className="me-2">
+                <FontAwesomeIcon icon={faUser} />
+              </span>
+              Admin
             </span>
             <span>
-              <FontAwesomeIcon icon={faCalendar} /> 14 Oct 2022
+              <span className="me-2">
+                <FontAwesomeIcon icon={faCalendar} />
+              </span>
+              14 Oct 2022
             </span>
             <span>
-              <FontAwesomeIcon icon={faTag} /> wood
+              <span className="me-2">
+                <FontAwesomeIcon icon={faTag} />
+              </span>
+              WSood
             </span>
           </div>
+
           <h5 className="card-title">Exploring new ways of decorating</h5>
           <p className="card-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

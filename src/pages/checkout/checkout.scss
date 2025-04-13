@@ -1,149 +1,161 @@
 .checkout_main {
-    overflow: hidden;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+   // universal padding for smaller screens
 
-    .checkOut-banner {
-        text-align: center;
-        background-image: url('../../assets/shop.jpeg');
-        background-size: cover;
-        background-position: center;
-        padding: 2rem 1rem;
-        position: relative;
-        height: 316px;
+  form label {
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: black;
-            margin-top: 5.5rem;
-        }
+  .checkOut-banner {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1rem;
+    height: 316px;
+    background-image: url('../../assets/shop.jpeg');
+    background-size: cover;
+    background-position: center;
 
-        h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: black;
-            margin-top: 1rem;
-        }
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(6px);
+      z-index: 0;
     }
 
+    h1, h2 {
+      position: relative;
+      z-index: 1;
+      color: black;
+      margin: 0;
+    }
 
-    .billingDetails {
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 0.8rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .banner-logo {
+      margin-top: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .billingDetails {
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2rem 1rem;
+
+    .formDetails,
+    .productDetails {
+      flex: 1 1 48%;
+      min-width: 300px;
+    }
+
+    .formDetails {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .productDetails {
+      .prodcontainer {
         display: flex;
         justify-content: center;
-        flex-direction: row;
-        width: 100vw;
 
-        .formDetails {
-            margin-left: 20px;
-            margin-right: 20px;
+        .product-subttl {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
 
-            flex: 1;
-            width: 50vw;
-            height: 60%;
+          .prdct, .subttl {
+            font-size: 20px;
+
+            span {
+              color: black;
+            }
+          }
+
+          .subttl {
+            text-align: end;
+          }
+        }
+      }
+
+      .horizontalLine {
+        margin: 2vw 0;
+        height: 1px;
+        width: 100%;
+        background-color: #9F9F9F;
+      }
+
+      .payment-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          label {
             display: flex;
-            justify-content: center;
-            // align-items: center;
+            align-items: center;
+            font-size: 16px;
+            cursor: pointer;
+
+            input {
+              margin-right: 10px;
+            }
+          }
         }
 
-        .productDetails {
-            padding-left: 5%;
-            padding-right: 5%;
-
-            .prodcontainer {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-
-                .product-subttl {
-                    justify-content: center;
-                    align-self: center;
-                    width: 100%;
-                    display: flex;
-                    gap: 15vw;
-
-                    .prdct {
-                        font-size: 20px;
-
-                        span {
-                            color: black;
-                        }
-                    }
-
-                    .subttl {
-                        margin-right: 10px;
-                        font-size: 20px;
-                        text-align: end;
-                    }
-                }
-
-
-            }
-
-            .horizontalLine {
-                margin-top: 2vw;
-                margin-bottom: 1vw;
-                height: 1px;
-                width: 100%;
-                background-color: #9F9F9F;
-
-            }
-
-
-            .payment-options {
-                display: flex;
-                flex-direction: column;
-                gap: 10px; 
-
-                .radio-group {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-
-                    label {
-                        display: flex;
-                        align-items: center;
-                        font-size: 16px; 
-                        cursor: pointer;
-
-                        input {
-                            margin-right: 10px;
-                        }
-                    }
-                }
-
-                .description {
-                    height: 100%;
-                    width: 100%;
-                    color: #9f9f9f;
-                    font-size: 14px; 
-                    line-height: 1.5; 
-                    margin-right: 30px; 
-                }
-
-                .place-order {
-                    margin-top: 20px;
-                    margin-right: 30px;
-                    padding: 15px 30px;
-                    font-size: 16px;
-                    color: black;
-                    background: white;
-                    border: 1px solid black;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    transition: background 0.3s, color 0.3s;
-
-                    &:hover {
-                        background: #b88e2f;
-                        color: white;
-                        border: none;
-                    }
-                }
-            }
-
-
-
+        .description {
+          min-height: 80px;
+          width: 100%;
+          color: #9f9f9f;
+          font-size: 14px;
+          line-height: 1.5;
+          transition: all 0.3s ease;
         }
 
+        .place-order {
+          margin: 20px auto 0 auto;
+          padding: 15px 30px;
+          font-size: 16px;
+          color: black;
+          background: white;
+          border: 1px solid black;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background 0.3s, color 0.3s;
+          width: 100%;
+          max-width: 318px;
+          height: 64px;
+          text-align: center;
 
+          &:hover {
+            background: #b88e2f;
+            color: white;
+            border: none;
+          }
+        }
+      }
     }
+  }
 }
-

@@ -7,7 +7,7 @@ import Promise from '../../components/our_promise/Promise';
 // boostrap imports
 import { Row, Col } from 'react-bootstrap';
 import { FaSearch } from 'react-icons/fa';
-
+import logo from '../../assets/logo.png';
 // image impots
 import RecentPostImage from './../../assets/blog-search-recent-post.jpg';
 
@@ -20,6 +20,8 @@ const Blog = () => {
       <Navbar />
 
       <div className="blog-banner">
+        <img src={logo} width="50" height="32" alt="Logo" className="banner-logo" />
+
         <h1>Blog</h1>
         <h2>Home {'>'} Blog</h2>
       </div>
@@ -207,7 +209,7 @@ const Blog = () => {
               marginTop: '4px',
             }}
           >
-            {'More'}
+            {'Next'}
           </span>
         </button>
       </div>

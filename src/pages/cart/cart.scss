@@ -2,27 +2,47 @@
   overflow: hidden;
 
   .cart-banner {
-    text-align: center;
-    background-image: url('../../assets/shop.jpeg');
-    background-size: cover;
-    background-position: center;
-    padding: 2rem 1rem;
-    position: relative;
-    height: 316px;
-
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: black;
-      margin-top: 5.5rem;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: black;
-      margin-top: 1rem;
-    }
+   position: relative;
+        text-align: center;
+        padding: 2rem 1rem;
+        height: 316px;
+        background-image: url('../../assets/shop.jpeg');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      
+        // ⬛ Overlay with backdrop blur
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(255, 255, 255, 0.3); // semi-transparent for blur effect to show
+          backdrop-filter: blur(6px); // ✅ Blurs background
+          z-index: 0;
+        }
+      
+        // Keep text above overlay
+        h1, h2 {
+          position: relative;
+          z-index: 1;
+          color: black;
+          margin: 0;
+        }
+      
+        h1 {
+          font-size: 2.5rem;
+          margin-top: 0.8rem;
+        }
+      
+        h2 {
+          font-size: 1rem;
+          margin-top: 0.5rem;
+        }
+        .banner-logo {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
   }
 
   .bill-generate {
@@ -30,8 +50,9 @@
     width: 100vw;
     display: flex;
     gap: 20px; 
-    padding: 20px;
+   
     align-items: flex-start;
+    margin-top: 60px;
 
     .cart-items {
       flex: 2; 
@@ -40,7 +61,7 @@
       align-items: center;
       height: auto;
       width: 66.66vw;
-      margin-left: 100px;
+      margin-left: 70px;
 
       .table-of-items {
         width: 100%;
@@ -52,11 +73,12 @@
 
           .headings {
             tr {
-              background-color: #f9f1e7;
-              font-weight: bold;
+              background-color: #F9F1E7;
+              font-weight: 500;
               text-align: center;
 
               th {
+                background-color: #F9F1E7;
                 padding: 10px;
                 font-size: 16px;
               }
@@ -68,19 +90,21 @@
               text-align: center;
 
               td {
-                padding: 15px;
+                padding: 16px;
                 vertical-align: middle;
+                
 
                 &:first-child {
                   width: 100px;
+                  
 
                   .item-img {
                     background-color: #f9f1e7;
                     border-radius: 5px;
 
                     img {
-                      width: 80px;
-                      height: 60px;
+                      width: 90px;
+                      height: 80px;
                       object-fit: fit;
                       border-radius: 8px;
                     }
@@ -91,13 +115,13 @@
                   text-align: left;
                   padding-left: 20px;
                   font-weight: 500;
-                  color: #666;
+                  color: #9F9F9F;
                 }
 
                 &:nth-child(3),
                 &:nth-child(4),
                 &:nth-child(5) {
-                  color: #888;
+                  color: #9F9F9F;
                 }
 
                 .quantity-input {
@@ -123,14 +147,14 @@
       flex: 1; 
       background-color: #f9f1e7; 
       padding: 20px;
-      border-radius: 8px;
+      // border-radius: 8px;
       text-align: center;
       max-width: 350px;
       min-height: 300px;
-      margin-left: 200px;
+      margin-left: 140px;
 
       h2 {
-        font-size: 24px;
+        font-size: 30px;
         font-weight: bold;
         margin-bottom: 20px;
       }
@@ -149,8 +173,9 @@
 
           span:first-child {
             margin-top: 12px;
-            font-weight: bold;
+            font-weight: 500;
             color: #000;
+            font-size: 16px;
           }
 
           .subtotal-amount {    
@@ -177,8 +202,116 @@
         transition: background-color 0.3s, color 0.3s;
 
         &:hover {
-          background-color: #000;
+          background-color: #B88E2F;
           color: #fff;
+        }
+      }
+    }
+  }
+
+  
+}
+@media (max-width: 768px) {
+  .cart-main {
+    // .cart-banner {
+    //   padding: 1rem 0.5rem;
+    //   height: 220px;
+    //   margin-left: 0px;
+
+    //   h1 {
+    //     font-size: 1.6rem;
+    //     margin-top: 0.5rem;
+    //   }
+
+    //   h2 {
+    //     font-size: 0.9rem;
+    //     margin-top: 0.3rem;
+    //   }
+
+    //   .banner-logo {
+    //     margin-top: 2rem;
+    //   }
+    // }
+
+    .bill-generate {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 30px;
+      
+
+      .cart-items {
+        width: 95vw;
+        margin-left: 0;
+        justify-content: center;
+      
+        .table-of-items {
+          table {
+            font-size: 0.75rem; // Slightly smaller text
+      
+            .headings tr th {
+              padding: 4px 2px; // Less padding
+              font-size: 12px;
+            }
+      
+            .body tr td {
+              padding: 6px 4px; // Tighter spacing between cells
+      
+              &:first-child .item-img img {
+                width: 50px;
+                height: 40px;
+                border-radius: 4px;
+              }
+      
+              .quantity-input {
+                width: 36px;
+                height: 24px;
+                font-size: 0.75rem;
+              }
+      
+              .remove-icon {
+                width: 14px;
+              }
+            }
+          }
+        }
+      }
+      
+
+      .cart-totals {
+        width: 90vw;
+        margin-left: 0;
+        padding: 16px;
+        max-width: none;
+        min-height: auto;
+        margin-left: 20px;
+        margin-top: 50px;
+
+        h2 {
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        .totals-details {
+          gap: 6px;
+
+          .totals-row {
+            font-size: 14px;
+
+            span:first-child {
+              font-size: 14px;
+            }
+
+            .subtotal-amount, .total-amount {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .checkout-button {
+          margin-top: 18px;
+          padding: 8px 16px;
+          font-size: 14px;
         }
       }
     }

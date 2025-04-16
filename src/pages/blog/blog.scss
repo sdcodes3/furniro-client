@@ -4,36 +4,57 @@
   box-sizing: border-box;
 
   .blog-banner {
+    position: relative;
     text-align: center;
+    padding: 2rem 1rem;
+    height: 316px;
     background-image: url('../../assets/shop.jpeg');
     background-size: cover;
     background-position: center;
-    padding: 2rem 1rem;
-    position: relative;
-    height: 316px;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(6px);
+      z-index: 0;
+    }
+
+    h1,
+    h2 {
+      position: relative;
+      z-index: 1;
+      color: black;
+      margin: 0;
+    }
 
     h1 {
-      margin: 0;
       font-size: 2.5rem;
-      color: black;
-      margin-top: 5.5rem;
+      margin-top: 0.8rem;
     }
 
     h2 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: black;
-      margin-top: 1rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .banner-logo {
+      margin-top: 4rem;
+      position: relative;
+      z-index: 1;
     }
   }
 
   .blog-general {
-    // background-color: greenyellow;
     margin: 100px 5%;
 
     .second-col {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+
       .category-search {
         margin-top: 20px;
 
@@ -67,6 +88,7 @@
           margin-top: 30px;
           padding: 0 20px;
           border-collapse: collapse;
+          color: #9f9f9f;
 
           .left {
             padding-left: 20px;
@@ -84,31 +106,116 @@
           margin-left: 20px;
           margin-bottom: 50px;
         }
+
         .recent-post-child {
-          margin-top: 50px;
+          margin-top: 30px;
           width: 100%;
           display: flex;
           margin-left: 20px;
 
           .recent-post-img {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
           }
 
           .recent-post-text {
-            margin: 0 20px;
+            margin: 0 10px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 4px;
+            font-size: 14px;
 
             .recent-post-child-date {
               color: #9f9f9f;
+              font-size: 12px;
             }
           }
         }
       }
     }
   }
+
+  // 🔻 Responsive adjustments
+  @media (max-width: 992px) {
+    
+    .blog-banner {
+      padding: 1.5rem 1rem;
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 0.9rem;
+      }
+      .banner-logo {
+        margin-top: 3rem;
+      }
+    }
+
+    .blog-general {
+      margin: 80px 4%;
+
+      .second-col {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-search {
+        width: 100%;
+        .search-box {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .recent-post-child {
+     
+      flex-direction: row;
+      align-items: flex-start;
+      margin-left: 0;
+      .recent-post-text {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+  .second-col {
+    padding-inline: 12px;
+
+    .category-search {
+      .search-box {
+        width: 100%;                   // Ensure it takes up full width
+        max-width: 300px;              // Set max width for the search box
+        margin: 0 auto;                // Auto margin for centering
+      }
+      .category-heading {
+        margin-left: 12px;
+        padding-inline: 12px; // ✅ Adds left/right space like recent-post
+        font-size: 1.2rem;
+      }
+
+      .category-text {
+        margin-left: 12px;
+        padding-inline: 12px; // ✅ Consistent padding
+        td {
+          padding: 16px 8px; // Optional: tighter spacing for mobile
+        }
+      }
+
+      .recent-post {
+        margin-left: 0;
+        padding-inline: 12px;
+      }
+
+      .recent-post-child {
+        margin-left: 0;
+        padding-inline: 12px;
+      }
+    }
+  }
+}
+
+  
 }

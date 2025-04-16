@@ -69,8 +69,10 @@ function Home() {
       </div>
 
       <div className="Browse txt">
-        <h1>Browse The Range</h1>
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+        <h1 style={{ fontSize: '35px' }}>Browse The Range</h1>
+        <h3 style={{ color: '#666666' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </h3>
       </div>
 
       <div className="Showcase">
@@ -105,7 +107,7 @@ function Home() {
       </div>
 
       <div className="Product txt">
-        <h1>Our Products</h1>
+        <h1 style={{ fontSize: '35px' }}>Our Products</h1>
       </div>
 
       <div className="Products">
@@ -113,7 +115,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product1} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Syltherine</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -124,7 +126,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product2} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Leviosa</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -135,7 +137,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product3} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Lolito</Card.Title>
                 <Card.Text>Luxury big sofa</Card.Text>
                 <Card.Title>Rp 7.000.000</Card.Title>
@@ -146,7 +148,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product4} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Respira</Card.Title>
                 <Card.Text>Outbar Table and stoll</Card.Text>
                 <Card.Title>Rp 500.000</Card.Title>
@@ -159,7 +161,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product5} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Syltherine</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -170,7 +172,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product6} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Leviosa</Card.Title>
                 <Card.Text>Stylish cafe chair</Card.Text>
                 <Card.Title>Rp 2.500.000</Card.Title>
@@ -181,7 +183,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product1} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Lolito</Card.Title>
                 <Card.Text>Luxury big sofa</Card.Text>
                 <Card.Title>Rp 7.000.000</Card.Title>
@@ -192,7 +194,7 @@ function Home() {
           <Col md={3} className="my-3 d-flex justify-content-center">
             <Card className="border-0">
               <Card.Img className="card-img" src={product2} />
-              <Card.Body>
+              <Card.Body style={{ backgroundColor: '#F4F5F7' }}>
                 <Card.Title>Respira</Card.Title>
                 <Card.Text>Outbar Table and stoll</Card.Text>
                 <Card.Title>Rp 500.000</Card.Title>
@@ -206,21 +208,37 @@ function Home() {
         </div>
       </div>
 
-      <div className="carousal-container">
-        <Row>
-          <Col md={5} className="my-3 d-flex justify-content-center">
-            <div className="left-text">
-              <h2 style={{ marginRight: 10 }}>50+ Beautiful rooms inspiration</h2>
-              <span style={{ marginRight: 10 }}>
-                Our designer already made a lot of beautiful prototipe of rooms that inspire you
-              </span>
+      <div className="carousal-container d-flex flex-column flex-md-row align-items-center justify-content-between px-3 px-md-5 py-5">
+        {/* Left: Text Section */}
+        <div
+          className="left-text text-md-start text-center mb-4 mb-md-0"
+          style={{ maxWidth: '500px' }}
+        >
+          <h2 className="fw-bold mb-2" style={{ fontSize: '40px', color: '#3A3A3A' }}>
+            50+ Beautiful rooms inspiration
+          </h2>
+          <p className="mb-4 text-muted" style={{ fontSize: '16px', lineHeight: '1.6' }}>
+            Our designer already made a lot of beautiful prototype of rooms that inspire you
+          </p>
+          <button
+            className="btnfilled px-4 py-2 "
+            // style={{
+            //   fontSize: '16px',
+            //   backgroundColor: '#B88E2F',
+            //   color: '#fff',
+            //   border: 'none',
+            //   width: '176px',
+            //   height: '48px',
+            // }}
+          >
+            Explore More
+          </button>
+        </div>
 
-              <button className="btnfilled">Explore More</button>
-            </div>
-          </Col>
-
-          <Col md={7} className="my-3 d-flex justify-content-center">
-            <div className="slider-wrapper left">
+        {/* Right: Carousel Section */}
+        {/* <Col md={7} className="my-3 d-flex justify-content-center">
+          <div className="slider-wrapper">
+            <div className="slider-track">
               <div className="item item1"></div>
               <div className="item item2"></div>
               <div className="item item3"></div>
@@ -230,8 +248,8 @@ function Home() {
               <div className="item item7"></div>
               <div className="item item8"></div>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </Col> */}
       </div>
 
       <div className="tag">
@@ -241,11 +259,11 @@ function Home() {
 
       <div className="imageGallery"></div>
 
-      <div className=" my-5 button-container">
-        <button onClick={(e) => onClickSignOut(e as any)} className="showmorebtn">
+      {/* <div className=" my-5 button-container">
+        <button onClick={onClickSignOut} className="showmorebtn">
           SIGN OUT!
         </button>
-      </div>
+      </div> */}
 
       <Footer />
     </>

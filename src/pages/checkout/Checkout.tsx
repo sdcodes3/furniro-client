@@ -4,7 +4,7 @@ import { Col, Form, Row } from 'react-bootstrap';
 import { useState } from 'react';
 import Promise from '../../components/our_promise/Promise';
 import Footer from '../../components/footer/Footer';
-
+import logo from '../../assets/logo.png';
 const Checkout = () => {
   const [selectedOption, setSelectedOption] = useState('bankTransfer');
 
@@ -14,7 +14,8 @@ const Checkout = () => {
       'Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.',
     cashOnDelivery:
       'Pay with cash upon delivery. Please ensure you have the exact amount ready as the delivery agent may not have change.',
-    creditCard: 'Pay securely using your credit card through our online payment gateway.',
+    creditCard:
+      'Pay securely using your credit card through our online payment gateway.Pay securely using your credit card through our online payment gateway.',
   };
 
   return (
@@ -22,6 +23,8 @@ const Checkout = () => {
       <Navbar />
 
       <div className="checkOut-banner">
+        <img src={logo} width="50" height="32" alt="Logo" className="banner-logo" />
+
         <h1>Checkout</h1>
         <h2>Home {'>'} Checkout</h2>
       </div>
@@ -30,11 +33,11 @@ const Checkout = () => {
         <Row>
           <Col md={6} className="formDetails">
             <Form style={{ fontSize: '18px' }} className="mt-5">
-              <h3 style={{ fontSize: '38px', marginBottom: '50px' }}>Billing details</h3>
+              <h3 style={{ fontSize: '36px', marginBottom: '50px' }}>Billing details</h3>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridFirstName">
-                  <Form.Label>First Name</Form.Label>
+                  <Form.Label style={{ fontSize: '16px' }}>First Name</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder=""
@@ -118,18 +121,18 @@ const Checkout = () => {
             <div className="prodcontainer">
               <div className="product-subttl mt-5">
                 <div className="prdct">
-                  <h3 style={{ fontSize: '30px' }}>Product</h3>
-                  <p style={{ color: '#9F9F9F' }}>
+                  <h3 style={{ fontSize: '24px' }}>Product</h3>
+                  <p style={{ color: '#9F9F9F', fontSize: '16px' }}>
                     Asgaard sofa <span>x 1</span>
                   </p>
-                  <p>Subtotal</p>
-                  <p>Total</p>
+                  <p style={{ fontSize: '16px' }}>Subtotal</p>
+                  <p style={{ fontSize: '16px' }}>Total</p>
                 </div>
 
                 <div className="subttl">
-                  <h3 style={{ fontSize: '30px' }}>Subtotal</h3>
-                  <p>Rs. 250,000.00</p>
-                  <p>Rs. 250,000.00</p>
+                  <h3 style={{ fontSize: '24px' }}>Subtotal</h3>
+                  <p style={{ fontSize: '16px' }}>Rs. 250,000.00</p>
+                  <p style={{ fontSize: '16px' }}>Rs. 250,000.00</p>
                   <p style={{ fontSize: '24px', fontWeight: 'bold', color: '#B88E2F' }}>
                     Rs. 250,000.00
                   </p>

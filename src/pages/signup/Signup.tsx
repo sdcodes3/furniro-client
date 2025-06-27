@@ -8,7 +8,6 @@ import logo from '../../assets/logo.png';
 import './signup.scss';
 import { useSignupMutation } from '../../slices/user.api.slice';
 import { setCredentials } from '../../slices/auth.slice';
-import { useAppSelector } from '../../hooks';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -30,9 +29,12 @@ const Signup = () => {
     event.preventDefault();
     if (!signupForm.current) return;
 
-    const name = signupForm.current.name.value;
-    const email = signupForm.current.email.value;
-    const password = signupForm.current.password.value;
+    const name = (signupForm.current.querySelector('input[name="name"]') as HTMLInputElement).value;
+    const email = (signupForm.current.querySelector('input[name="email"]') as HTMLInputElement)
+      .value;
+    const password = (
+      signupForm.current.querySelector('input[name="password"]') as HTMLInputElement
+    ).value;
 
     const userInfo = { name, email, password };
 

@@ -23,13 +23,15 @@ function Navbar() {
     setMenuOpen(false);
   };
 
-  const onClickSignOut = async (event) => {
+  interface SignOutEvent extends React.MouseEvent<HTMLButtonElement | SVGSVGElement, MouseEvent> {}
+
+  const onClickSignOut = async (event: SignOutEvent): Promise<void> => {
     event.preventDefault();
     try {
-      await signoutApiCall().unwrap();
+      await signoutApiCall({}).unwrap();
       dispatch(signout());
       navigate('/signin');
-    } catch (err) {
+    } catch (err: any) {
       console.log('signout failed: ', err);
       alert(err?.data?.message || 'signout failed');
     }
@@ -91,7 +93,7 @@ function Navbar() {
                 className="text-dark cursor-pointer"
                 size={20}
                 onClick={onClickSignOut}
-                title="Logout"
+                aria-label="Logout"
               />
             </div>
           </div>

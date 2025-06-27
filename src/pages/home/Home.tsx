@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 // page imports
 import '../home/home.scss';
 import Navbar from '../../components/navbar/navbar';
 import Footer from '../../components/footer/Footer';
-import { useSignoutMutation } from '../../slices/user.api.slice';
-import { signout } from '../../slices/auth.slice';
+// import { useSignoutMutation } from '../../slices/user.api.slice';
+// import { signout } from '../../slices/auth.slice';
 
 // bootstrap imports
 import { Card, Row, Col } from 'react-bootstrap';
@@ -26,10 +26,10 @@ import product6 from '../../assets/Products_images/Muggo.png';
 import { useAppSelector } from '../../hooks';
 function Home() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { userInfo } = useAppSelector((state) => state.auth);
 
-  const [signoutApiCall] = useSignoutMutation();
+  // const [signoutApiCall] = useSignoutMutation();
 
   useEffect(() => {
     if (!userInfo) {
@@ -37,18 +37,18 @@ function Home() {
     }
   }, [userInfo]);
 
-  const onClickSignOut = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  // const onClickSignOut = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
 
-    try {
-      await signoutApiCall({}).unwrap();
-      dispatch(signout());
-      navigate('/signin');
-    } catch (err: any) {
-      console.log('signout failed: ', err);
-      alert(err?.data?.message || 'signout failed');
-    }
-  };
+  //   try {
+  //     await signoutApiCall({}).unwrap();
+  //     dispatch(signout());
+  //     navigate('/signin');
+  //   } catch (err: any) {
+  //     console.log('signout failed: ', err);
+  //     alert(err?.data?.message || 'signout failed');
+  //   }
+  // };
 
   return (
     <>
